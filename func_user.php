@@ -10,15 +10,15 @@ function h($str)
 function db_conn()
 {
     try {
-        $db_name = "bm_table";    //データベース名
-        $db_id   = "root";      //アカウント名
-        $db_pw   = "root";      //パスワード：XAMPPはパスワード無しに修正してください。
-        $db_host = "localhost"; //DBホスト
+        // $db_name = "bm_table";    //データベース名
+        // $db_id   = "root";      //アカウント名
+        // $db_pw   = "root";      //パスワード：XAMPPはパスワード無しに修正してください。
+        // $db_host = "localhost"; //DBホスト
 
-        // $db_name = "gs_db";    //データベース名
-        // $db_id   = "mil16";      //アカウント名
-        // $db_pw   = "GONgon6015";      //パスワード：XAMPPはパスワード無しに修正してください。
-        // $db_host = "mysql57.mil16.sakura.ne.jp"; //DBホスト
+        $db_name = "mil16_33_watanabeai";    //データベース名
+        $db_id   = "mil16";      //アカウント名
+        $db_pw   = "GONgon6015";      //パスワード：XAMPPはパスワード無しに修正してください。
+        $db_host = "mysql57.mil16.sakura.ne.jp"; //DBホスト
         $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
         return $pdo;//ここを追加！！
     } catch (PDOException $e) {

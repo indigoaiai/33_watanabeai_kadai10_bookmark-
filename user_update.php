@@ -15,6 +15,7 @@ require_once('func.php');
 $pdo = db_conn();
 
 //３．データ更新SQL作成（UPDATE テーブル名 SET 更新対象1=:更新データ ,更新対象2=:更新データ2,... WHERE id = 対象ID;）
+// $stmt = $pdo->prepare( "UPDATE gs_bm_table SET bookname = :bookname, bookurl = :bookurl, bookcomment = :bookcomment, price = :price, genre = :genre,registerdate = sysdate() WHERE id = :id;" );  
 $stmt = $pdo->prepare( "UPDATE gs_bm_table SET bookname = :bookname, bookurl = :bookurl, bookcomment = :bookcomment, price = :price, genre = :genre,registerdate = sysdate() WHERE id = :id;" );  
 
 // 4. バインド変数を用意

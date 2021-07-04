@@ -9,14 +9,17 @@ $lpw = $_POST['lpw'];
 $kanri_flg = $_POST['kanri_flg'];
 $life_flg = $_POST['life_flg'];
 
-
 // 2. DB接続します
-try {
-  //Password:MAMP='root',XAMPP=''
-  $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','root');
-} catch (PDOException $e) {
-  exit('DBConnectError:'.$e->getMessage());
-}
+// try {
+//   //Password:MAMP='root',XAMPP=''
+//   // $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','root');
+//   $pdo = new PDO('mysql:dbname=mil16_33_watanabeai;charset=utf8;host=localhost','root','root');
+
+// } catch (PDOException $e) {
+//   exit('DBConnectError:'.$e->getMessage());
+// }
+require_once('func_user.php');
+$pdo = db_conn();
 
 // ３．SQL文を用意(データ登録：INSERT)
 $stmt = $pdo->prepare(
